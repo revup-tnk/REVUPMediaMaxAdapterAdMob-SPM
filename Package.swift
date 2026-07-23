@@ -13,29 +13,27 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", exact: "13.5.1"),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "12.14.0"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.6.0"),
     ],
     targets: [
         .target(
             name: "REVUPMediaMaxAdapterAdMobTarget",
             dependencies: [
                 .target(name: "REVUPMediaMaxAdapterAdMob"),
-                .target(name: "REVUPMediaMaxAdapterAdMobMediationAdapter"),
-                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package"),
+                .target(name: "AppLovinMediationGoogleAdapter"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
             ],
             path: "Sources"
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterAdMob",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/REVUPMediaMaxAdapterAdMob.zip",
-            checksum: "87c1f57450aefde677a5fc9faa8cfb456051d4d4fe631e224839a7b1ce5676a7"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterAdMob.zip",
+            checksum: "2e8e955b6b5acda991db620b922562345d272c3ee2f0e6a307425659ec5664eb"
         ),
         .binaryTarget(
-            name: "REVUPMediaMaxAdapterAdMobMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/AppLovinMediationGoogleAdapter.xcframework.zip",
-            checksum: "57c8504d1849a2737c46fb96c6103c3f2d5c145fe87c66368d63e473a58f9d93"
-        ),
+            name: "AppLovinMediationGoogleAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/google-adapter/AppLovinMediationGoogleAdapter-13.6.0.0.zip",
+            checksum: "ea93ebaf490decb7dfa5976c946a47e96a38b3e2fa67cb63b0e31806ce7d2dfe"
+        )
     ]
 )
