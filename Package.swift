@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "REVUPMediaMaxAdapterAdMob",
-    platforms: [.iOS(.v13)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "REVUPMediaMaxAdapterAdMob",
@@ -13,27 +13,21 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.6.0"),
+        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package-Google.git", exact: "13110000.0.0"),
     ],
     targets: [
         .target(
             name: "REVUPMediaMaxAdapterAdMobTarget",
             dependencies: [
                 .target(name: "REVUPMediaMaxAdapterAdMob"),
-                .target(name: "AppLovinMediationGoogleAdapter"),
-                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
+                .product(name: "AppLovinMediationGoogleAdapter", package: "AppLovin-MAX-Swift-Package-Google"),
             ],
             path: "Sources"
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterAdMob",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterAdMob.zip",
-            checksum: "2e8e955b6b5acda991db620b922562345d272c3ee2f0e6a307425659ec5664eb"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.2.0/REVUPMediaMaxAdapterAdMob.zip",
+            checksum: "d26c231aaa2f3fa14438016fc9f656ca0355f4eed91f895bcb4ce699c7f74093"
         ),
-        .binaryTarget(
-            name: "AppLovinMediationGoogleAdapter",
-            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/google-adapter/AppLovinMediationGoogleAdapter-13.6.0.0.zip",
-            checksum: "ea93ebaf490decb7dfa5976c946a47e96a38b3e2fa67cb63b0e31806ce7d2dfe"
-        )
     ]
 )
